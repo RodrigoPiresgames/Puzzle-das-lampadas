@@ -7,8 +7,8 @@ namespace LightPuzzle
         static void Main(string[] args)
         {
             Light light1 = new Light();
-            Light light1 = new Light();
-            Light light1 = new Light();
+            Light light2 = new Light();
+            Light light3 = new Light();
 
             int maxTries = 6;
             int currentTries = 0;
@@ -21,32 +21,28 @@ namespace LightPuzzle
                 switch (option)
                 {
                     case "a":
-                        Changelight(1);
+                        Changelight(light1);
                         break;
                     case "s":
-                        Changelight(1);
-                        Changelight(2);
+                        Changelight(light1);
+                        Changelight(light2);
                         break;
                     case "d":
-                        Changelight(2);
-                        Changelight(3);
+                        Changelight(light2);
+                        Changelight(light3);
                         break;
                 }
 
                 currentTries++;
 
-                Console.WriteLine($"{light1} {light2} {light3}");
+                Console.WriteLine($"{light1.turnOn} {light2.turnOn} {light3.turnOn}");
             }
         }
 
-        public void Changelight(int lightToChange)
+        static void Changelight(Light lightToChange)
         {
-            if (lightToChange == 1)
-                !light1.turnOn;
-            else if (lightToChange == 2)
-                !light2.turnOn;
-            else if (lightToChange == 3)
-                !light3.turnOn;
+            lightToChange.turnOn = !lightToChange.turnOn;
         }
+
     }
 }

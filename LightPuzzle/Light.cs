@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Lights
+public class Light
 {
-	bool lightUp = false;
+	public bool turnOn { get; set; }
 }
