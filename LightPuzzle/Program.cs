@@ -4,44 +4,67 @@ namespace LightPuzzle
 {
     class Program
     {
+        /// <summary>
+        /// Onde o programa principal corre, cria 3 luzes e corre até ou o jogador ganhar ou até ficar sem tentativas
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
+            //Criar as 3 Luzes
             Light light1 = new Light();
             Light light2 = new Light();
             Light light3 = new Light();
 
+            //numero maximo de tentativas
             int maxTries = 6;
+            //contador de quantas tentativas foram feitas
             int currentTries = 0;
 
+            //chama a função que explica as regras do jogo
+            GiveRules();
 
             while (currentTries < maxTries)
             {
-                Console.WriteLine("Gimme an -a- or -s- or -d-");
+                currentTries++;
+                Console.WriteLine("Which button will you choose?");
                 string option = Console.ReadLine();
+
                 switch (option)
                 {
-                    case "a":
+                    case "A":
                         Changelight(light1);
                         break;
-                    case "s":
+                    case "S":
                         Changelight(light1);
                         Changelight(light2);
                         break;
-                    case "d":
+                    case "D":
                         Changelight(light2);
                         Changelight(light3);
                         break;
                 }
 
-                currentTries++;
-
                 Console.WriteLine($"{light1.turnOn} {light2.turnOn} {light3.turnOn}");
+                Console.WriteLine($"This is your {currentTries} try");
             }
         }
 
         static void Changelight(Light lightToChange)
         {
             lightToChange.turnOn = !lightToChange.turnOn;
+        }
+
+        static void GiveRules()
+        {
+            Console.WriteLine("Welcome to the Light Puzzle Game");
+            Console.WriteLine("In this game you will have to solve a small puzzle by clicking buttons");
+            Console.WriteLine("The objective is to have all the lights be turned on at the same time");
+            Console.WriteLine("There's 3 buttons the you can choose");
+            Console.WriteLine("All buttons act as a switch, they will change the state of their assigned button/s");
+            Console.WriteLine("The button A has the first light assigned to it");
+            Console.WriteLine("The button S has the first and second light assigned to it");
+            Console.WriteLine("And finally, the button D has the second and third light assigned to it");
+            Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
         }
 
     }
