@@ -23,12 +23,14 @@ namespace LightPuzzle
             //chama a função que explica as regras do jogo
             GiveRules();
 
+            //ciclo principal do jogo
             while (currentTries < maxTries)
             {
                 currentTries++;
                 Console.WriteLine("Which button will you choose?");
                 string option = Console.ReadLine();
 
+                //switch que executa a mudança de estado da luzes de acordo com a opção do jogador
                 switch (option)
                 {
                     case "A":
@@ -44,8 +46,22 @@ namespace LightPuzzle
                         break;
                 }
 
+                //visualizaçao de como estao as luzes e quantas tentativas o jogador ainda tem
                 Console.WriteLine($"{light1.turnOn} {light2.turnOn} {light3.turnOn}");
                 Console.WriteLine($"This is your {currentTries} try");
+
+                //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
+                if (GameIsWon(light1, light2, light3) = true)
+                {
+                    Console.WriteLine("The game is over and you WON!!!");
+                    break;
+                }
+            }
+
+            //verificaçao se o jogo não está ganho, chamando a funçao GameIsWon e se não escreve que o jogador perdeu
+            if (GameIsWon(light1, light2, light3) = false)
+            {
+                Console.WriteLine("The game is over and you LOST...");
             }
         }
 
