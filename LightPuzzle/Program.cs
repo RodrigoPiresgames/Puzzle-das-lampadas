@@ -10,7 +10,7 @@ namespace LightPuzzle
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            //Criar as 3 Luzes
+            //cria as 3 Luzes
             Light light1 = new Light();
             Light light2 = new Light();
             Light light3 = new Light();
@@ -51,7 +51,7 @@ namespace LightPuzzle
                 Console.WriteLine($"This is your {currentTries} try");
 
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
-                if (GameIsWon(light1, light2, light3) = true)
+                if (GameIsWon(light1, light2, light3) == true)
                 {
                     Console.WriteLine("The game is over and you WON!!!");
                     break;
@@ -59,7 +59,7 @@ namespace LightPuzzle
             }
 
             //verificaçao se o jogo não está ganho, chamando a funçao GameIsWon e se não escreve que o jogador perdeu
-            if (GameIsWon(light1, light2, light3) = false)
+            if (GameIsWon(light1, light2, light3) == false)
             {
                 Console.WriteLine("The game is over and you LOST...");
             }
@@ -83,5 +83,11 @@ namespace LightPuzzle
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
         }
 
+        static bool GameIsWon (Light x, Light y, Light z)
+        {
+            if (x.turnOn && y.turnOn && z.turnOn == true)
+                return true;
+            return false;
+        }
     }
 }
