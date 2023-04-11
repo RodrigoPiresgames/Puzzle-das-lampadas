@@ -65,11 +65,18 @@ namespace LightPuzzle
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lightToChange"></param>
         static void Changelight(Light lightToChange)
         {
             lightToChange.turnOn = !lightToChange.turnOn;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         static void GiveRules()
         {
             Console.WriteLine("Welcome to the Light Puzzle Game");
@@ -83,6 +90,13 @@ namespace LightPuzzle
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        /// <returns></returns>
         static bool GameIsWon (Light x, Light y, Light z)
         {
             if (x.turnOn && y.turnOn && z.turnOn == true)
