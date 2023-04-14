@@ -47,7 +47,7 @@ namespace LightPuzzle
                 }
 
                 //visualizaçao de como estao as luzes e quantas tentativas o jogador ainda tem
-                Console.WriteLine($"{light1.turnOn} {light2.turnOn} {light3.turnOn}");
+                Console.WriteLine($"{light1.ToString()} {light2.ToString()} {light3.ToString()}");
                 Console.WriteLine($"This is your {currentTries} try");
 
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
