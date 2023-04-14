@@ -53,7 +53,7 @@ namespace LightPuzzle
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
                 if (GameIsWon(light1, light2, light3) == true)
                 {
-                    Console.WriteLine("The game is over and you N!!!");
+                    Console.WriteLine("The game is over and you WON!!!");
                     break;
                 }
             }
@@ -66,16 +66,16 @@ namespace LightPuzzle
         }
 
         /// <summary>
-        /// 
+        /// A função recebe uma light e troca o seu valor, ligando e desligando a lux
         /// </summary>
-        /// <param name="lightToChange"></param>
+        /// <param name="lightToChange">A luz que vai ser ter o seu valor alterado</param>
         static void Changelight(Light lightToChange)
         {
             lightToChange.turnOn = !lightToChange.turnOn;
         }
 
         /// <summary>
-        /// 
+        /// A função que dá todas as informações ao player de como o jogo funciona
         /// </summary>
         static void GiveRules()
         {
@@ -88,15 +88,16 @@ namespace LightPuzzle
             Console.WriteLine("The button S has the first and second light assigned to it");
             Console.WriteLine("And finally, the button D has the second and third light assigned to it");
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
+            Console.WriteLine("");
         }
 
         /// <summary>
-        /// 
+        /// A função que verifica se o jogo está ganho ou não
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
-        /// <returns></returns>
+        /// <param name="x">A primeira luz</param>
+        /// <param name="y">A segunda luz</param>
+        /// <param name="z">A terceira luz</param>
+        /// <returns>True ou false dependendo se o jogo está ou não ganho</returns>
         static bool GameIsWon (Light x, Light y, Light z)
         {
             if (x.turnOn && y.turnOn && z.turnOn == true)
