@@ -96,12 +96,9 @@ namespace LightPuzzle
             Console.WriteLine("The button S has the first and second light assigned to it");
             Console.WriteLine("And finally, the button D has the second and third light assigned to it");
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
-<<<<<<< HEAD
             Console.WriteLine("");
-=======
             Console.WriteLine(" ( )  ( )  ( )");
             Console.WriteLine("  =    =    =");
->>>>>>> 3e64d4869e1cd0fd732b42b760198bcb572fe8c1
         }
 
         /// <summary>
