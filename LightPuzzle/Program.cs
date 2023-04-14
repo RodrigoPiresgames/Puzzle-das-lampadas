@@ -53,7 +53,8 @@ namespace LightPuzzle
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
                 if (GameIsWon(light1, light2, light3) == true)
                 {
-                    Console.WriteLine("The game is over and you N!!!");
+                    Console.WriteLine("Congratulations!! You Win!!");
+                    Console.WriteLine("         Game  Over");
                     break;
                 }
             }
@@ -61,7 +62,8 @@ namespace LightPuzzle
             //verificaçao se o jogo não está ganho, chamando a funçao GameIsWon e se não escreve que o jogador perdeu
             if (GameIsWon(light1, light2, light3) == false)
             {
-                Console.WriteLine("The game is over and you LOST...");
+                Console.WriteLine("All lamps are off, you Lost...");
+                Console.WriteLine("         Game  Over");
             }
         }
 
