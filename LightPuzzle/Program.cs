@@ -47,12 +47,16 @@ namespace LightPuzzle
                 }
 
                 //visualizaçao de como estao as luzes e quantas tentativas o jogador ainda tem
+                Console.WriteLine($"{light1.ToImage()} {light2.ToImage()} {light3.ToImage()}");
+                Console.WriteLine($"{light1.ToImage2()} {light2.ToImage2()} {light3.ToImage2()}");
                 Console.WriteLine($"{light1.ToString()} {light2.ToString()} {light3.ToString()}");
                 Console.WriteLine($"This is your {currentTries} try");
 
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
                 if (GameIsWon(light1, light2, light3) == true)
                 {
+                    Console.WriteLine(" (:)  (:)  (:)");
+                    Console.WriteLine("  =    =    =");
                     Console.WriteLine("Congratulations!! You Win!!");
                     Console.WriteLine("         Game  Over");
                     break;
@@ -61,7 +65,9 @@ namespace LightPuzzle
 
             //verificaçao se o jogo não está ganho, chamando a funçao GameIsWon e se não escreve que o jogador perdeu
             if (GameIsWon(light1, light2, light3) == false)
-            {
+            {   
+                Console.WriteLine(" ( )  ( )  ( )");
+                Console.WriteLine("  =    =    =");
                 Console.WriteLine("All lamps are off, you Lost...");
                 Console.WriteLine("         Game  Over");
             }
@@ -90,6 +96,8 @@ namespace LightPuzzle
             Console.WriteLine("The button S has the first and second light assigned to it");
             Console.WriteLine("And finally, the button D has the second and third light assigned to it");
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button u wanna press");
+            Console.WriteLine(" ( )  ( )  ( )");
+            Console.WriteLine("  =    =    =");
         }
 
         /// <summary>

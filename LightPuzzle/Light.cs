@@ -7,4 +7,12 @@ public class Light
         {
             return this.turnOn ? "ON" : "OFF";
         }
+	public string ToImage()
+        {
+            return this.turnOn ? "(:)" : "( )";
+        }
+	public string ToImage2()
+        {
+            return this.turnOn ? " = " : " = ";
+        }
 }
