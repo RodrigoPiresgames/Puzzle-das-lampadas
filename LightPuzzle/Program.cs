@@ -47,18 +47,26 @@ namespace LightPuzzle
                 }
 
                 //visualizaçao de como estao as luzes e quantas tentativas o jogador ainda tem
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"{light1.ToImage()} {light2.ToImage()} {light3.ToImage()}");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine($"{light1.ToImage2()} {light2.ToImage2()} {light3.ToImage2()}");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"{light1.ToString()} {light2.ToString()} {light3.ToString()}");
                 Console.WriteLine($"This is your {currentTries} try");
 
                 //verificaçao se o jogo está ganho, chamando a funçao GameIsWon e se sim escreve que o jogador ganhou
                 if (GameIsWon(light1, light2, light3) == true)
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(" (:)  (:)  (:)");
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("  =    =    =");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Congratulations!! You Win!!");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("         Game  Over");
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
                 }
             }
@@ -66,10 +74,15 @@ namespace LightPuzzle
             //verificaçao se o jogo não está ganho, chamando a funçao GameIsWon e se não escreve que o jogador perdeu
             if (GameIsWon(light1, light2, light3) == false)
             {   
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(" ( )  ( )  ( )");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("  =    =    =");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("All lamps are off, you Lost...");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("         Game  Over");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -97,8 +110,11 @@ namespace LightPuzzle
             Console.WriteLine("And finally, the button D has the second and third light assigned to it");
             Console.WriteLine("To choose a button you only have to type in A, S or D according to the button you wanna press");
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(" ( )  ( )  ( )");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("  =    =    =");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         /// <summary>
